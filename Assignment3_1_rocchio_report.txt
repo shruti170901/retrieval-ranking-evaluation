@@ -1,0 +1,30 @@
+Using standard TF-IDF vectors, we obtained the following evaluation metrics for the weighting scheme (lnc.ltc) -
+
+Mean Average Precision (mAP@20) : 0.06485
+Average NDCG (averNDCG@20) : 0.02314285
+
+We obtained the following results using Relevance feedback:
+
+alpha	beta	gamma	mAP@20			NDCG@20
+				
+1		1		0.5		0.2308571429	0.05457142857
+				
+0.5		0.5		0.5		0.2617142857	0.05628571429
+				
+1		0.5		0		0.06171428571	0.026
+
+Here we can observe that mAP has increased significantly in case of relevance feedback but it has decreased in case of pseudo relevance feedback. The Reason for increase in case of relevance feedback is because it brings the query results closer to the gold standard documents. For the case gamma=0, we notice that mAP and NDCG do not change considerably because the number of retrived relevant document is less so shift in the vector is less.
+
+
+and Pseudo Relevance Feedback produces the following outcomes: 
+
+alpha	beta	gamma	mAP@20			NDCG@20
+				
+1		1		0.5		0.02428571429	0.01685714286
+				
+0.5		0.5		0.5		0.024			0.01714285714
+				
+1		0.5		0		0.02428571429	0.01657142857
+
+
+In case pseudo relevance, mAP and NDCG scores have declined because the retrived documents were not of high relevance.
